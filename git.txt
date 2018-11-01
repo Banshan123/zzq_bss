@@ -1,0 +1,116 @@
+
+git会自动忽略空文件夹
+
+1 git clone 拉取代码
+ git clone https://github.com/FeiSallyLJY/GitTest.git
+
+2.git status 状态追踪
+(ls)查看
+
+3.git add 提交到暂存区域
+
+三种提交  方式
+
+	单文件提交 git add ljy.txt
+	多文件提交 git add d.txt s.txt
+	全部提交   git add.
+
+4.错误操作:需要撤回
+
+	git checkout 只能撤回还没有git add (提交到暂存区)的状态
+
+			对于新添加的文件需要加到git file当中
+			然后修改,添加,删除 可以进行撤回
+
+	单文件撤回 git checkout ljy.txt
+	多文件撤回 git checkout d.txt s.txt
+	
+touch g.txt新建
+
+//新建文件夹
+
+git touch image/.gitkeep
+
+
+
+点击方向键 上可以获得上一级的命令
+
+
+5.提交到本地仓库
+
+git commit -m "(当前版本的有效信息)";
+
+6.查看我们本地仓库的提交版本信息
+
+git log --pretty=oneline(屏蔽作者和时间信息)
+
+(HEAD-->master)当前属于哪个版本
+
+ 41165d6a0c782496a0201f3fe0dc70bb2db2d464   (当前版本的ID,经过非对称加密之后的);
+
+7.git reset 回退版本
+		
+git reset --hard HEAD~2
+
+
+8.$ git push -u origin master 
+
+	git -u是第一次上传的时候加 (-u)
+
+ "(上传)"
+
+
+
+
+
+钥匙:ssh-keygen -t rsa -C "m15241160468@163.com”
+
+//git分支
+git remote -v
+创建一个分支
+git checkout -b(创建完毕,并且切换到dev) dev(新的分支名字,随便取)
+
+
+
+合并分支
+
+git merge dev当前处于分支,去合并 dev合并
+
+git  branch(查看本地都有几个分支,当前处于哪一个(*文字为绿色的))
+切换分支
+git checkout dev(具体切换到哪个分支)
+git branch -d dev(删除某一分支)
+在仓库上面新建两个分支
+
+在本地创建和远程对应的分支,(并且把远程分支里面的内容拉去到本地)
+
+git checkout -b lzl origin/lzl
+
+远程仓库所有分支要拉取本地统一合并,解决冲突然后上传!
+
+代码commit之后  git pull拉取远程仓库的代码看看有没有冲突,
+
+如果没有冲突 直接push ;
+
+有冲突的话,解决冲突  =>重新commit =>push
+
+
+
+
+
+
+
+
+
+
+
+git checkout -b dev        // 相当于git branch dev   git chekout dev
+git branch                 //命令查看当前分支
+修改文件
+git add a.php
+git commit -m 'branch test'
+git checkout master         //dev的工作完成，切换回master分支
+git merge dev               //把dev分支的工作成果合并到master分支上
+git branch -d dev           //删除dev分支
+
+
